@@ -1,0 +1,49 @@
+<!-- Encabezado -->
+<header class="header">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <h1>🌀 LISTA DE JUEGOS</h1>
+  <div class="buttons">
+      <button class="headerButton">🛒 CARRITO</button>
+      <button class="headerButton">❓ AYUDA</button>
+  </div>
+</header>
+
+<!-- Contenedor de la lista de juegos -->
+ <body>
+<div class="gameList">
+  <ul>
+    @for(game of juego; track game.id){
+    <li class="gameCard">
+      <!-- Imagen del juego -->
+      <img [src]="game.thumbnail" alt="{{ game.title }}" />
+
+      <!-- Contenido de la tarjeta -->
+      <div class="gameContent">
+        <!-- Título del juego -->
+        <p [routerLink]="['/game', game.id]">{{ game.title }}</p>
+
+        <!-- Plataforma y género -->
+        <p>{{ "Plataforma: " + game.platform }}</p>
+        <p>{{ "Género: " + game.genre }}</p>
+
+        <!-- Botón para jugar -->
+        <a [href]="game.game_url" target="_blank" class="playButton">Jugar ahora</a>
+      </div>
+    </li>}
+  </ul>
+</div>
+<div class="scanlines"></div>
+</body>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+      <div class="copyright">
+          ⚡ 2024 CYBERGAMES | POWERED BY Andrey & Andy :D ⚡
+      </div>
+      <div class="social-links">
+          <a href="#"><i class="fas fa-terminal"></i></a>
+          <a href="#"><i class="fas fa-rocket"></i></a>
+          <a href="#"><i class="fas fa-code"></i></a>
+      </div>
+  </div>
+</footer>

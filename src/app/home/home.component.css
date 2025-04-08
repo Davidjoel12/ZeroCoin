@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap');
+
+/* Título con efecto glitch */
+.header h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px #00ff9d;
+  position: relative;
+  animation: glitch 2s infinite;
+  color: #ffffff;
+}
+.header {
+  background: #000000; /* Fondo negro sólido */
+  padding: 1rem 2rem;
+  border-bottom: 3px solid #00ff9d;
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+  display: flex;
+  justify-content: space-between; /* Alineación horizontal */
+  align-items: center; /* Alineación vertical */
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem; /* Espacio entre botones */
+}
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+/* Contenedor de juegos con borde neón */
+.gameList {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  border: 2px solid #00ff9d;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 255, 157, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+}
+/* Estilos base mejorados */
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+    color: #00ff9d;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Grid de tarjetas */
+.gameList ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+/* Tarjetas compactas con animaciones */
+.gameCard {
+    background: linear-gradient(145deg, #2d2d2d, #1f1f1f);
+    border: 2px solid #00ff9d;
+    border-radius: 15px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 380px; /* Altura reducida */
+}
+
+.gameCard:hover {
+    transform: translateY(-5px) rotateZ(0.5deg);
+    box-shadow: 0 0 25px #00ff9d;
+}
+
+.gameCard::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 157, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: scan 6s linear infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateY(-100%) rotate(45deg); }
+    100% { transform: translateY(100%) rotate(45deg); }
+}
+
+/* Imagen compacta */
+.gameCard img {
+    width: 100%;
+    height: 150px; /* Altura reducida */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    filter: contrast(1.1) saturate(1.2);
+}
+
+/* Botones dinámicos */
+.playButton {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #000;
+    color: #00ff9d;
+    border: 2px solid #00ff9d;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.playButton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 157, 0.3), transparent);
+    transition: 0.5s;
+}
+
+.playButton:hover {
+    background: #00ff9d;
+    color: #000;
+    box-shadow: 0 0 15px #00ff9d;
+    transform: scale(1.05);
+}
+
+.playButton:hover::before {
+    left: 100%;
+}
+
+/* Footer estilo cyberpunk */
+.footer {
+    background: linear-gradient(45deg, #000000, #1a1a1a);
+    padding: 1.5rem 2rem;
+    border-top: 3px solid #00ff9d;
+    margin-top: auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    color: #00ff9d;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-links a:hover {
+    text-shadow: 0 0 10px #00ff9d;
+    transform: translateY(-2px);
+}
+
+.headerButton {
+  background: transparent;
+  border: 2px solid #00ff9d;
+  color: #00ff9d;
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.headerButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 157, 0.3), transparent);
+  transition: 0.5s;
+}
+
+.headerButton:hover {
+  background: #00ff9d;
+  color: #000;
+  box-shadow: 0 0 15px #00ff9d;
+  transform: scale(1.05);
+}
+
+.headerButton:hover::before {
+  left: 100%;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .gameList ul {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .gameCard {
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .header h1 {
+        font-size: 1.2rem;
+    }
+}
