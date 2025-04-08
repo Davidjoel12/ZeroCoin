@@ -1,58 +1,118 @@
+/* Fondo general estilo gaming */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffe7;
+}
+
+/* Caja de login */
+.login-box {
+  background: #111;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #00ffe7;
+  border: 2px solid #00ffe7;
+  max-width: 400px;
+  width: 100%;
+  animation: pulseNeon 2s ease-in-out infinite alternate;
+}
+
+/* Título estilo neón */
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #00ffe7;
+  text-shadow: 0 0 10px #00ffe7;
+  font-size: 2rem;
+}
+
+/* Etiquetas */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #00ffe7;
+}
+
+/* Input estilizado */
+.form-control {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 2px solid #00ffe7;
+  background-color: #000;
+  color: #00ffe7;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #ff00ff;
+  outline: none;
+  box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Grupo de formulario */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Botón principal */
+.btn-primary {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #ff00ff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #ff00ff;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e600e6;
+  box-shadow: 0 0 25px #ff00ff, 0 0 35px #ff00ff;
+}
+
+.btn-primary:disabled {
+  background-color: #333;
+  color: #888;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  text-shadow: 0 0 5px red;
+}
+
+/* Alerta de error */
+.alert-danger {
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  box-shadow: 0 0 10px red;
+}
+
+/* Animación neón */
+@keyframes pulseNeon {
+  from {
+    box-shadow: 0 0 15px #00ffe7, 0 0 25px #00ffe7;
   }
-  
-  .login-box {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 400px;
+  to {
+    box-shadow: 0 0 30px #00ffe7, 0 0 50px #00ffe7;
   }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .btn-primary:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
-  
-  .alert-danger {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    padding: 0.75rem 1.25rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-  }
-  
-  .error-message {
-    color: #dc3545;
-    font-size: 0.8rem;
-  }
+}
