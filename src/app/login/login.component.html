@@ -13,8 +13,7 @@
                  [(ngModel)]="credentials.username" 
                  #username="ngModel"
                  required
-                 class="form-control"
-                 placeholder="admin, josue123 o auditor">
+                 class="form-control">
           <div *ngIf="username.invalid && (username.dirty || username.touched)" 
                class="error-message">
             Usuario requerido
@@ -27,8 +26,7 @@
                  [(ngModel)]="credentials.password" 
                  #password="ngModel"
                  required
-                 class="form-control"
-                 placeholder="admin123, josue456 o auditor789">
+                 class="form-control">
           <div *ngIf="password.invalid && (password.dirty || password.touched)" 
                class="error-message">
             Contraseña requerida
