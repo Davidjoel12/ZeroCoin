@@ -215,6 +215,51 @@ body {
   left: 100%;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 10mm;
+}
+  
+  .paginationButton {
+    background: transparent;
+    border: 2px solid #00ff9d;
+    color: #00ff9d;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 1rem;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+  
+  .paginationButton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 157, 0.3), transparent);
+    transition: 0.5s;
+}
+  
+  .paginationButton:hover {
+    background: #00ff9d;
+    color: #000;
+    box-shadow: 0 0 15px #00ff9d;
+    transform: scale(1.05);
+}
+  
+  .paginationButton:hover::before {
+    left: 100%;
+}
+
 /* Responsividad */
 @media (max-width: 768px) {
     .gameList ul {
