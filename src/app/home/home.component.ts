@@ -13,6 +13,9 @@ import { RouterLink } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   juego: game[] = [];
+  currentPage: number = 1;
+  itemsPerPage: number = 9;
+  paginatedGames: game[] = [];
 
   constructor(public juegos: ApiService){}
 
@@ -25,6 +28,7 @@ export class HomeComponent implements OnInit {
     return this.juegos.juego().subscribe({
       next:(data)=>{
         this.juego = data
+        this.updatePaginatedGames();
         console.log(data);
       },
 
@@ -34,6 +38,15 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  updatePaginatedGames() {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.paginatedGames = this.juego.slice(startIndex, endIndex);
+  }
 
+  changePage(page: number) {
+    this.currentPage = page;
+    this.updatePaginatedGames();
+  }
 
 }

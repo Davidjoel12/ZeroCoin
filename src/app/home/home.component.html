@@ -13,7 +13,7 @@
   <h1>🌀 LISTA DE JUEGOS</h1>
 <div class="gameList">
   <ul>
-    @for(game of juego; track game.id){
+    @for(game of paginatedGames; track game.id){
     <li class="gameCard">
       <!-- Imagen del juego -->
       <img [src]="game.thumbnail" alt="{{ game.title }}" />
@@ -32,6 +32,12 @@
       </div>
     </li>}
   </ul>
+</div>
+<!-- Controles de paginación -->
+<div class="pagination">
+  <button class="paginationButton" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>
+  <span>Página {{ currentPage }}</span>
+  <button class="paginationButton" (click)="changePage(currentPage + 1)" [disabled]="currentPage * itemsPerPage >= juego.length">Siguiente</button>
 </div>
 <div class="scanlines"></div>
 </body>
